@@ -5,6 +5,11 @@ body{
   align-items: center;
 }
 
+.cardsGeral{
+  display: flex;
+  gap: 50px;
+}
+
 .card {
   border: 1px solid white;
   border-radius: 20px;
@@ -21,7 +26,7 @@ body{
   border-radius: 5px;
 }
 
-.imgRick{
+.img{
   border-radius: 10px;
 }
 

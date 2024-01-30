@@ -1,8 +1,14 @@
-function Card() {
+/* eslint-disable react/prop-types */
+function Card(props) {
+
+  const item = props.item
+
+  console.log(item)
+
     return (
         <>
           <div className="card">
-            <h2>Rick Sanchez</h2>
+            <h2>{item.name}</h2>
 
             <div className="tags">
             <div className="tag">Status: Vivo</div>
@@ -10,7 +16,7 @@ function Card() {
             <div className="tag">Origem: Terra C-137</div>
             </div>
 
-            <img className="imgRick" src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" />
+            <img className="img" src={item.image} />
           </div>
         </>
       )
