@@ -18,8 +18,27 @@ body{
 .card > h2 {
   font-size: 32px;
   border-left: 6px solid #8bc6e6;
+  border-radius: 5px;
 }
 
 .imgRick{
   border-radius: 10px;
+}
+
+.tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+  max-width: 300px;
+  justify-content: center;
+}
+
+.tag{
+  background-color: white;
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 4px 12px;
 }
