@@ -26,6 +26,7 @@ body{
   padding: 16px;
   box-shadow: 4px 4px white;
   cursor: pointer;
+  width: 300px;
 }
 
 .card > h2 {
