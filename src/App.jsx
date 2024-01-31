@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-key */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Card from "./components/Card/Card";
 
 function App() {
- //Carregamento de dados direto via codigo
+  //Carregamento de dados direto via codigo
   // const item1 = {
   //   name: "Rick Sanchez",
   //   image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
@@ -21,25 +21,28 @@ function App() {
 
   // const itens = [item1, item2, item3];
 
-  const [itens, setItens] = useState([])
+  const [itens, setItens] = useState([]);
 
   //Carregamento de dados via API(Backend)
-  async function carregarDadosApi(){
-    const apiUrl = "https://rickandmortyapi.com/api/character/"
+  async function carregarDadosApi() {
+    const apiUrl = "https://rickandmortyapi.com/api/character/";
 
-    const response = await fetch(apiUrl)
+    const response = await fetch(apiUrl);
 
-    const body = await response.json()
+    const body = await response.json();
 
     const results = body.results;
 
-    console.log(results)
+    console.log(results);
 
-    // setItens(results)
+    setItens(results);
   }
 
-  carregarDadosApi()
-
+  //Protegemos o carregamento de dados da API para chamar
+  //apenas uma única vez
+  useEffect(function () {
+    carregarDadosApi();
+  }, []);
 
   return (
     <>
